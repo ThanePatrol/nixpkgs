@@ -88,11 +88,9 @@ stdenv.mkDerivation rec {
     rmdir $out/share/${pname}/java
     ln -s ${jdk} $out/share/${pname}/java
     makeWrapper $out/share/${pname}/processing $out/bin/processing \
-      ''${gappsWrapperArgs[@]} \
-      --prefix _JAVA_OPTIONS " " -Dawt.useSystemAAFontSettings=lcd
+      ''${gappsWrapperArgs[@]}
     makeWrapper $out/share/${pname}/processing-java $out/bin/processing-java \
-      ''${gappsWrapperArgs[@]} \
-      --prefix _JAVA_OPTIONS " " -Dawt.useSystemAAFontSettings=lcd
+      ''${gappsWrapperArgs[@]}
   '';
 
   meta = with lib; {
