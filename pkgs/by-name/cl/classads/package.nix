@@ -3,7 +3,6 @@
   stdenv,
   fetchurl,
   autoreconfHook,
-  pcre,
 }:
 
 stdenv.mkDerivation rec {
@@ -16,8 +15,6 @@ stdenv.mkDerivation rec {
   };
 
   nativeBuildInputs = [ autoreconfHook ];
-
-  buildInputs = [ pcre ];
 
   configureFlags = [
     "--enable-namespace"
